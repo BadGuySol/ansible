@@ -1,0 +1,15 @@
+---
+
+- name: Deploy PG HA Cluster
+  hosts: cluster
+  become: yes
+  vars:     
+    patroni_scope: "postgres"
+    #postgres_root: "/srv/postgres"  
+    #patroni_node_name: "pg-{{ ansible_dynamic_hostname }}"
+    #patroni_scope_walg: "patroni-class-walg"
+  roles:
+    - role: deploy_pg_cluster
+
+...
+  
